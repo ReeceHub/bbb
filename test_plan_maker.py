@@ -1,7 +1,7 @@
 from plan_maker import PlanMaker
 from microcycle import Microcycle
 from workout import WorkoutOne, WorkoutTwo, WorkoutThree, WorkoutFour
-from movement import Movement
+from exercise import Exercise
 
 
 class TestPlanMakerInit:
@@ -84,23 +84,23 @@ class TestWorkouts:
     def test_workout_one(self):
         w1 = WorkoutOne()
 
-        assert len(w1.movements) == 2
-        assert all([isinstance(m, Movement) for m in w1.movements])
+        assert len(w1.exercises) == 2
+        assert all([isinstance(m, Exercise) for m in w1.exercises])
 
     def test_workout_two(self):
         w1 = WorkoutTwo()
 
-        assert len(w1.movements) == 2
-        assert all([isinstance(m, Movement) for m in w1.movements])
+        assert len(w1.exercises) == 2
+        assert all([isinstance(m, Exercise) for m in w1.exercises])
 
     def test_workout_three(self):
         w1 = WorkoutThree()
 
-        assert len(w1.movements) == 2
-        assert all([isinstance(m, Movement) for m in w1.movements])
+        assert len(w1.exercises) == 2
+        assert all([isinstance(m, Exercise) for m in w1.exercises])
 
     def test_workout_four(self):
         w1 = WorkoutFour()
 
-        assert len(w1.movements) == 2
-        assert all([isinstance(m, Movement) for m in w1.movements])
+        assert len(w1.exercises) == 2
+        assert all([isinstance(m, Exercise) for m in w1.exercises])
