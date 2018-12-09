@@ -1,7 +1,8 @@
 from plan_maker import PlanMaker
+from microcycle import Microcycle
 
 
-class TestPlanMaker:
+class TestPlanMakerInit:
 
     def test_initialisation(self):
         pm = PlanMaker(squat=1, deadlift=2, bench=3, press=4)
@@ -51,3 +52,20 @@ class TestPlanMaker:
         # up by 10
         assert pm.bench_1rm(2) == 13
         assert pm.press_1rm(2) == 14
+
+
+class TestMicrocycleCreation:
+
+    def test_microcycle_can_be_made(self):
+        mc = PlanMaker().make_microcycle(1)
+
+        assert isinstance(mc, Microcycle)
+        assert mc.squat_1rm == 80
+        assert mc.deadlift_1rm == 100
+        assert mc.bench_1rm == 50
+        assert mc.press_1rm == 30
+
+    def test_microcycle_workouts(self):
+        mc = PlanMaker().make_microcycle(1)
+
+        assert len(mc.workouts) == 4
