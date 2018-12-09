@@ -1,3 +1,6 @@
+from workout import WorkoutOne, WorkoutTwo, WorkoutThree, WorkoutFour
+
+
 class Microcycle:
 
     """A month of workouts."""
@@ -7,4 +10,13 @@ class Microcycle:
         self.deadlift_1rm = deadlift_1rm
         self.bench_1rm = bench_1rm
         self.press_1rm = press_1rm
-        self.workouts = ['w1', 'w2', 'w3', 'w4']
+
+    def get_workout(self, workout_number):
+        if workout_number == 1:
+            return WorkoutOne()
+        elif workout_number == 2:
+            return WorkoutTwo()
+        elif workout_number == 3:
+            return WorkoutThree()
+        elif workout_number == 4:
+            return WorkoutFour()
