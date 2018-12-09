@@ -84,23 +84,37 @@ class TestWorkouts:
     def test_workout_one(self):
         w1 = WorkoutOne()
 
-        assert len(w1.exercises) == 2
+        assert len(w1.exercises) == 3
         assert all([isinstance(m, Exercise) for m in w1.exercises])
+
+        assert w1.exercises[0].movement == 'Press'
+        assert w1.exercises[0].reps == 3 * [5]
+        assert w1.exercises[0].weight == None
+
+        assert w1.exercises[1].movement == 'Bench'
+        assert w1.exercises[1].reps == 5 * [10]
+        assert w1.exercises[1].weight == None
+
+        assert w1.exercises[2].movement == 'Chins'
+        assert w1.exercises[2].reps == 5 * [10]
+        assert w1.exercises[2].weight == None
 
     def test_workout_two(self):
-        w1 = WorkoutTwo()
+        w2 = WorkoutTwo()
 
-        assert len(w1.exercises) == 2
-        assert all([isinstance(m, Exercise) for m in w1.exercises])
+        assert len(w2.exercises) == 3
+        assert all([isinstance(m, Exercise) for m in w2.exercises])
+        assert w2.exercises[0].movement == 'Deadlift'
+        assert w2.exercises[0].reps == [5, 5, 5]
 
     def test_workout_three(self):
-        w1 = WorkoutThree()
+        w3 = WorkoutThree()
 
-        assert len(w1.exercises) == 2
-        assert all([isinstance(m, Exercise) for m in w1.exercises])
+        assert len(w3.exercises) == 3
+        assert all([isinstance(m, Exercise) for m in w3.exercises])
 
     def test_workout_four(self):
-        w1 = WorkoutFour()
+        w4 = WorkoutFour()
 
-        assert len(w1.exercises) == 2
-        assert all([isinstance(m, Exercise) for m in w1.exercises])
+        assert len(w4.exercises) == 3
+        assert all([isinstance(m, Exercise) for m in w4.exercises])
